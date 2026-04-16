@@ -14,12 +14,6 @@ provider "azurerm" {
   features {}
 }
 
-# ── Locals ───────────────────────────────────────────────────────────────────
-locals {
-  # Fall back to the app resource group if the identity lives in the same one
-  identity_rg = var.identity_resource_group_name != "" ? var.identity_resource_group_name : var.resource_group_name
-}
-
 # ── Resource Group ──────────────────────────────────────────────────────────
 resource "azurerm_resource_group" "this" {
   name     = var.resource_group_name
@@ -58,7 +52,7 @@ module "container_apps" {
   log_analytics_workspace_id   = module.log_analytics.workspace_resource_id
   acr_login_server             = module.acr.login_server
   identity_name                = var.identity_name
-  identity_resource_group_name = local.identity_rg
+  identity_resource_group_name = var.identity_resource_group_name
   image_name                   = var.image_name
   image_tag                    = var.image_tag
   tags                         = var.tags

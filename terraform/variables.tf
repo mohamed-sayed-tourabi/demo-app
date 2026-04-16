@@ -52,9 +52,8 @@ variable "identity_name" {
 }
 
 variable "identity_resource_group_name" {
-  description = "Resource group where the pre-existing Managed Identity lives (defaults to resource_group_name)"
+  description = "Resource group where the pre-existing Managed Identity lives"
   type        = string
-  default     = ""
 }
 
 variable "tags" {
