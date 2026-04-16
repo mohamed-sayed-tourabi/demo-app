@@ -6,7 +6,7 @@ if [ -z "$1" ]; then
 fi
 
 APP_URL="https://$1"
-CONCURRENT=20   # above the threshold of 10
+CONCURRENT=15   # above the threshold of 10
 DURATION=60    # seconds
 
 echo "🔥 Hammering $APP_URL with $CONCURRENT concurrent requests..."
