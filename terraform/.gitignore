@@ -1,0 +1,20 @@
+# Local variable files — contain sensitive values (subscription ID, etc.)
+terraform.tfvars
+*.tfvars
+!terraform.tfvars.example
+
+# Terraform state files — stored remotely in Azure Blob Storage
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Terraform working directories
+.terraform/
+.terraform.lock.hcl
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Plan output files
+*.tfplan

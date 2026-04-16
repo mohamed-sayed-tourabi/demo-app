@@ -1,0 +1,28 @@
+# ── Required ─────────────────────────────────────────────────────────────────
+# Copy this file to terraform.tfvars and fill in your values.
+# Never commit terraform.tfvars to source control.
+
+subscription_id = "00000000-0000-0000-0000-000000000000"
+
+resource_group_name          = "rg-global-azure-demo"
+acr_name                     = "acrglobalazuredemo"
+app_name                     = "from-code-to-cloud"
+image_name                   = "demo-app"
+image_tag                    = "v1"
+environment_name             = "env-global-azure"
+log_analytics_workspace_name = "log-global-azure-demo"
+
+# ── Managed Identity (created by admin, AcrPull pre-assigned) ─────────────────
+# Name of the User-Assigned Managed Identity your admin created
+identity_name = "id-acr-rbac"
+# Leave empty to use the same resource group as the app, or set explicitly
+identity_resource_group_name = "rg-global-azure-persistent"
+
+location = "westeurope"
+
+tags = {
+  "cost-center" = "GJKB"
+  "environment" = "learning"
+  "owner"       = "JKB"
+  "project"     = "global-azure-tunisia-2026"
+}
