@@ -46,6 +46,11 @@ resource "azurerm_container_app" "this" {
         value = var.location
       }
     }
+
+    http_scale_rule {
+      name                = "http-scaler"
+      concurrent_requests = "5"
+    }
   }
 
   ingress {
